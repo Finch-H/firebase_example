@@ -108,21 +108,21 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                   curve: Curves.easeInOutQuad,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
-                                    child: Container(
-                                      width: 60,
-                                      height: 60,
-                                      color: Colors.red[400],
-                                      child: i == 0
-                                          ? Image(
-                                              image: NetworkImage(
-                                                  "https://i.pinimg.com/564x/5d/a3/d2/5da3d22d08e353184ca357db7800e9f5.jpg"),
-                                            )
-                                          : Icon(
-                                              Icons.account_circle_outlined,
-                                              color: Colors.white,
-                                              size: 40,
-                                            ),
-                                    ),
+                                    // child: Container(
+                                    //   width: 60,
+                                    //   height: 60,
+                                    //   color: Colors.red[400],
+                                    //   child: i == 0
+                                    //       ? Image(
+                                    //           image: NetworkImage(
+                                    //               "https://i.pinimg.com/564x/5d/a3/d2/5da3d22d08e353184ca357db7800e9f5.jpg"),
+                                    //         )
+                                    //       : Icon(
+                                    //           Icons.account_circle_outlined,
+                                    //           color: Colors.white,
+                                    //           size: 40,
+                                    //         ),
+                                    // ),
                                   ),
                                 ),
                               ]),
@@ -161,7 +161,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                           ),
                                           children: [
                                             TextSpan(
-                                              text: "Beautiful,",
+                                              text: "",
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 40,
