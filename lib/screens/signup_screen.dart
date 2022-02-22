@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_example/animation/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,6 +9,7 @@ import 'login_screen.dart';
 
 class SignUPScreen extends StatefulWidget {
   SignUPScreen({Key key}) : super(key: key);
+  static const String idScreen = "signUP";
 
   @override
   State<SignUPScreen> createState() => _SignUPScreenState();
@@ -14,7 +17,7 @@ class SignUPScreen extends StatefulWidget {
 
 class _SignUPScreenState extends State<SignUPScreen> {
   final feature = ["Login", "Sign Up"];
-
+   String _email, _password, _fullName, _mobileNumber;
   int i = 1;
 
   @override
@@ -205,17 +208,21 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       TextField(
+                                        onChanged: (value) {
+                                          _fullName = value;
+                                        },
                                         // readOnly: true, // * Just for Debug
                                         cursorColor: Colors.black,
                                         style: TextStyle(color: Colors.black),
                                         showCursor: true,
                                         //cursorColor: mainColor,
-                                        //decoration: kTextFiledInputDecoration,
+                                        decoration: InputDecoration(labelText: "FullName")
                                       ),
                                       SizedBox(
                                         height: 25,
                                       ),
                                       TextField(
+
                                           // readOnly: true, // * Just for Debug
                                           cursorColor: Colors.black,
                                           style: TextStyle(color: Colors.black),
@@ -338,5 +345,28 @@ class _SignUPScreenState extends State<SignUPScreen> {
                 : LoginScreen()),
       ),
     );
+  }
+
+  Future<void>registerinfirestore(BuildContext context)async {
+    UserCredential user = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+        email: _email.trim(), password: _password.trim());
+    if (user != null) {
+      await FirebaseFirestore.instance
+          .collection('Users')
+          .doc(_email)
+          .set({
+        'FullName': _fullName,
+        'MobileNumber': _mobileNumber,
+        'Email': _email,
+      });
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(builder: (context) {
+      //     return SignInScreen();
+      //   }),
+      //);
+
+    }
   }
 }

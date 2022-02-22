@@ -7,7 +7,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key key}) : super(key: key);
+  static const String idScreen = "LoginScreen";
 
+  TextEditingController emailTextEditingController= TextEditingController();
+  TextEditingController passwordTextEditingController= TextEditingController();
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -108,21 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   curve: Curves.easeInOutQuad,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
-                                    child: Container(
-                                      width: 60,
-                                      height: 60,
-                                      color: Colors.red[400],
-                                      child: i == 0
-                                          ? Image(
-                                              image: NetworkImage(
-                                                  "https://i.pinimg.com/564x/5d/a3/d2/5da3d22d08e353184ca357db7800e9f5.jpg"),
-                                            )
-                                          : Icon(
-                                              Icons.account_circle_outlined,
-                                              color: Colors.white,
-                                              size: 40,
-                                            ),
-                                    ),
+
                                   ),
                                 ),
                               ]),
@@ -150,13 +139,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text("Welcome Back,",
+                                      Text("Welcome",
                                           style: TextStyle(
                                             fontSize: 40,
                                             fontWeight: FontWeight.w300,
                                           )),
                                       Text(
-                                        "AmirHossein",
+                                        "",
                                         style: TextStyle(
                                           fontSize: 40,
                                           fontWeight: FontWeight.bold,
@@ -170,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
                               SizedBox(
-                                height: height / 14,
+                                height: height / 20,
                               ),
 
 
@@ -197,8 +186,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                             style:
                                                 TextStyle(color: Colors.black),
                                             showCursor: true,
-                                            //cursorColor: mainColor,
-                                            // decoration: TextFiledInputDecoration,
+                                            //cursorColor: mainColor,"
+                                           decoration: InputDecoration(hintText: "Email"),
                                           ),
                                           SizedBox(
                                             height: 25,
