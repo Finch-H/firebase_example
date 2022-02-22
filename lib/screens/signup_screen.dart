@@ -203,83 +203,85 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                   1,
                                   16,
                                   curve: Curves.easeInExpo,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      TextField(
-                                        onChanged: (value) {
-                                          _fullName = value;
-                                        },
-                                        // readOnly: true, // * Just for Debug
-                                        cursorColor: Colors.black,
-                                        style: TextStyle(color: Colors.black),
-                                        showCursor: true,
-                                        //cursorColor: mainColor,
-                                        decoration: InputDecoration(labelText: "FullName")
-                                      ),
-                                      SizedBox(
-                                        height: 25,
-                                      ),
-                                      TextField(
-
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        TextField(
+                                          onChanged: (value) {
+                                            _fullName = value;
+                                          },
                                           // readOnly: true, // * Just for Debug
                                           cursorColor: Colors.black,
                                           style: TextStyle(color: Colors.black),
                                           showCursor: true,
                                           //cursorColor: mainColor,
-                                          decoration:InputDecoration(labelText: "Password")),
-                                      SizedBox(
-                                        height: 25,
-                                      ),
-                                      TextField(
-                                        // readOnly: true, // * Just for Debug
-                                        cursorColor: Colors.black,
-                                        style: TextStyle(color: Colors.black),
-                                        showCursor: true,
-                                        //cursorColor: mainColor,
-                                        decoration:
-                                            InputDecoration(
-                                                labelText: "Password again"),
-                                      ),
-
-
-
-
-
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-
-
-
-
-                                      // FaceBook and Google ICon
-                                      TopAnime(
-                                        1,
-                                        11,
-                                        child: Row(
-                                          children: [
-                                            IconButton(
-                                              icon: FaIcon(
-                                                FontAwesomeIcons.facebookF,
-                                                size: 30,
-                                              ),
-                                              onPressed: () {},
-                                            ),
-                                            SizedBox(
-                                              width: 15,
-                                            ),
-                                            IconButton(
-                                              icon: FaIcon(
-                                                  FontAwesomeIcons.googlePlusG,
-                                                  size: 35),
-                                              onPressed: () {},
-                                            ),
-                                          ],
+                                          decoration: InputDecoration(labelText: "FullName")
                                         ),
-                                      )
-                                    ],
+                                        SizedBox(
+                                          height: 25,
+                                        ),
+                                        TextField(
+
+                                            // readOnly: true, // * Just for Debug
+                                            cursorColor: Colors.black,
+                                            style: TextStyle(color: Colors.black),
+                                            showCursor: true,
+                                            //cursorColor: mainColor,
+                                            decoration:InputDecoration(labelText: "Password")),
+                                        SizedBox(
+                                          height: 25,
+                                        ),
+                                        TextField(
+                                          // readOnly: true, // * Just for Debug
+                                          cursorColor: Colors.black,
+                                          style: TextStyle(color: Colors.black),
+                                          showCursor: true,
+                                          //cursorColor: mainColor,
+                                          decoration:
+                                              InputDecoration(
+                                                  labelText: "Password again"),
+                                        ),
+
+
+
+
+
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+
+
+
+
+                                        // FaceBook and Google ICon
+                                        TopAnime(
+                                          1,
+                                          11,
+                                          child: Row(
+                                            children: [
+                                              IconButton(
+                                                icon: FaIcon(
+                                                  FontAwesomeIcons.facebookF,
+                                                  size: 30,
+                                                ),
+                                                onPressed: () {},
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              IconButton(
+                                                icon: FaIcon(
+                                                    FontAwesomeIcons.googlePlusG,
+                                                    size: 35),
+                                                onPressed: () {},
+                                              ),
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

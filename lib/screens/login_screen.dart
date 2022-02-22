@@ -8,7 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key key}) : super(key: key);
   static const String idScreen = "LoginScreen";
-
+   String _email, _password;
   TextEditingController emailTextEditingController= TextEditingController();
   TextEditingController passwordTextEditingController= TextEditingController();
   @override
@@ -17,7 +17,9 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final feature = ["Login", "Sign Up"];
-
+  String _email, _password;
+  TextEditingController emailTextEditingController= TextEditingController();
+  TextEditingController passwordTextEditingController= TextEditingController();
   int i = 0;
   
 
@@ -181,6 +183,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           TextField(
+                                            controller: emailTextEditingController ,
+                                            onChanged: (value) {
+                                              _email=value;
+                                            },
                                             // readOnly: true, // * Just for Debug
                                             cursorColor: Colors.black,
                                             style:
@@ -193,6 +199,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                             height: 25,
                                           ),
                                           TextField(
+                                              controller: passwordTextEditingController ,
+                                              obscureText: true,
+                                              onChanged: (value) {
+                                                _password=value;
+                                              },
                                               // readOnly: true, // * Just for Debug
                                               cursorColor: Colors.black,
                                               style: TextStyle(
