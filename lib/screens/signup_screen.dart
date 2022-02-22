@@ -1,14 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_example/animation/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:login_signup_ui/animation/animations.dart';
-import 'package:login_signup_ui/screens/login_screen.dart';
-
-import '../constant.dart';
+import 'login_screen.dart';
 
 class SignUPScreen extends StatefulWidget {
-  SignUPScreen({Key? key}) : super(key: key);
+  SignUPScreen({Key key}) : super(key: key);
 
   @override
   State<SignUPScreen> createState() => _SignUPScreenState();
@@ -212,7 +210,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                         style: TextStyle(color: Colors.black),
                                         showCursor: true,
                                         //cursorColor: mainColor,
-                                        decoration: kTextFiledInputDecoration,
+                                        //decoration: kTextFiledInputDecoration,
                                       ),
                                       SizedBox(
                                         height: 25,
@@ -223,8 +221,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                           style: TextStyle(color: Colors.black),
                                           showCursor: true,
                                           //cursorColor: mainColor,
-                                          decoration: kTextFiledInputDecoration
-                                              .copyWith(labelText: "Password")),
+                                          decoration:InputDecoration(labelText: "Password")),
                                       SizedBox(
                                         height: 25,
                                       ),
@@ -235,7 +232,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                         showCursor: true,
                                         //cursorColor: mainColor,
                                         decoration:
-                                            kTextFiledInputDecoration.copyWith(
+                                            InputDecoration(
                                                 labelText: "Password again"),
                                       ),
 

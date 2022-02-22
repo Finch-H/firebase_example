@@ -29,8 +29,8 @@ class TopAnime extends StatelessWidget {
 }
 
 class BottomAnime extends StatelessWidget {
-  Widget? child;
-  Curve? curve;
+  Widget child;
+  Curve curve;
   int seconds;
   int padding;
 
@@ -56,12 +56,12 @@ class BottomAnime extends StatelessWidget {
 }
 
 class LeftAnime extends StatelessWidget {
-  Widget? child;
-  Curve? curve;
+  Widget child;
+  Curve curve;
   int seconds;
   int padding;
 
-  LeftAnime(this.seconds, this.padding, {required this.child, this.curve});
+  LeftAnime(this.seconds, this.padding, { this.child, this.curve});
 
   @override
   Widget build(BuildContext context) {
@@ -83,12 +83,12 @@ class LeftAnime extends StatelessWidget {
 }
 
 class RightAnime extends StatelessWidget {
-  Widget? child;
-  Curve? curve;
+  Widget child;
+  Curve curve;
   int seconds;
   int padding;
 
-  RightAnime(this.seconds, this.padding, {required this.child, this.curve});
+  RightAnime(this.seconds, this.padding, {this.child, this.curve});
 
   @override
   Widget build(BuildContext context) {

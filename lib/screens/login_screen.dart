@@ -1,14 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_example/animation/animations.dart';
+import 'package:firebase_example/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:login_signup_ui/animation/animations.dart';
-import 'package:login_signup_ui/screens/signup_screen.dart';
-
-import '../constant.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -200,8 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 TextStyle(color: Colors.black),
                                             showCursor: true,
                                             //cursorColor: mainColor,
-                                            decoration:
-                                                kTextFiledInputDecoration,
+                                            // decoration: TextFiledInputDecoration,
                                           ),
                                           SizedBox(
                                             height: 25,
@@ -214,8 +211,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                               showCursor: true,
                                               //cursorColor: mainColor,
                                               decoration:
-                                                  kTextFiledInputDecoration
-                                                      .copyWith(
+                                                  InputDecoration
+                                                      (
                                                           labelText:
                                                               "Password")),
 
