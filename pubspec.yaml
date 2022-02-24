@@ -33,6 +33,8 @@ dependencies:
   cloud_firestore:
   firebase_database:
   firebase_auth:
+  firebase_core:
+  fluttertoast:
 
 dev_dependencies:
   flutter_test:

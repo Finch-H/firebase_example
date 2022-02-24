@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_example/screens/login_screen.dart';
 import 'package:firebase_example/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   runApp(MyApp());
 }
+DatabaseReference Users = FirebaseDatabase.instance.ref().child("Users");
 
 class MyApp extends StatelessWidget {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
