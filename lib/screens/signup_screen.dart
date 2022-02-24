@@ -16,6 +16,12 @@ class SignUPScreen extends StatefulWidget {
 }
 
 class _SignUPScreenState extends State<SignUPScreen> {
+
+
+
+  TextEditingController nameTextEditingController= TextEditingController();
+  TextEditingController emailTextEditingController= TextEditingController();
+  TextEditingController passwordTextEditingController= TextEditingController();
   final feature = ["Login", "Sign Up"];
    String _email, _password, _fullName, _mobileNumber;
   int i = 1;
@@ -212,6 +218,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                           onChanged: (value) {
                                             _fullName = value;
                                           },
+                                            controller: nameTextEditingController,
                                           // readOnly: true, // * Just for Debug
                                           cursorColor: Colors.black,
                                           style: TextStyle(color: Colors.black),
@@ -222,7 +229,37 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                         SizedBox(
                                           height: 25,
                                         ),
+
+
                                         TextField(
+
+                                            onChanged: (value){
+                                              _email=value;
+                                            },
+                                            controller: emailTextEditingController,
+
+                                            maxLines: 1,
+                                            decoration: const InputDecoration(
+                                              labelText: " E-mail",
+                                              border: InputBorder.none,
+                                            ),
+                                            // readOnly: true, // * Just for Debug
+                                            cursorColor: Colors.black,
+                                            style: TextStyle(color: Colors.black),
+                                            showCursor: true,
+                                            //cursorColor: mainColor,
+                                            ),
+                                        SizedBox(
+                                          height: 25,
+                                        ),
+
+
+                                        TextField(
+                                            onChanged: (value) {
+                                              _password = value;
+                                            },
+                                            controller: passwordTextEditingController ,
+                                            obscureText: true,
 
                                             // readOnly: true, // * Just for Debug
                                             cursorColor: Colors.black,
@@ -233,18 +270,6 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                         SizedBox(
                                           height: 25,
                                         ),
-                                        TextField(
-                                          // readOnly: true, // * Just for Debug
-                                          cursorColor: Colors.black,
-                                          style: TextStyle(color: Colors.black),
-                                          showCursor: true,
-                                          //cursorColor: mainColor,
-                                          decoration:
-                                              InputDecoration(
-                                                  labelText: "Password again"),
-                                        ),
-
-
 
 
 
@@ -315,6 +340,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                         top: 10,
                                         child: GestureDetector(
                                           onTap: () {
+                                            registerinfirestore(context);
                                             Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
@@ -359,7 +385,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
           .doc(_email)
           .set({
         'FullName': _fullName,
-        'MobileNumber': _mobileNumber,
+        //'MobileNumber': _mobileNumber,
         'Email': _email,
       });
       // Navigator.push(
